@@ -1,0 +1,183 @@
+/* ============================================================
+   Estilos específicos para la Política de Privacidad
+   (Microsoft Learn style) — 100% Responsive
+   ============================================================ */
+
+.docs-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2rem);
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.docs-content .doc-header {
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+.docs-content .doc-header h1 {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  margin: 0;
+}
+.docs-content .doc-header .metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+.docs-content .doc-header .metadata span {
+  background: var(--surface-2);
+  padding: 0.1rem 0.6rem;
+  border-radius: 4px;
+}
+
+.docs-content h2 {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  margin-top: 2rem;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.3rem;
+}
+.docs-content h3 {
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  margin-top: 1.4rem;
+  color: var(--text);
+}
+.docs-content h4 {
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  margin-top: 1rem;
+  color: var(--text-2);
+}
+
+.docs-content p {
+  line-height: 1.7;
+  color: var(--text-2);
+  margin: 0.6rem 0;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+}
+
+.docs-content ul,
+.docs-content ol {
+  padding-left: 1.2rem;
+  color: var(--text-2);
+  font-size: clamp(0.9rem, 1vw, 1rem);
+}
+.docs-content li { margin: 0.2rem 0; }
+
+.docs-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.8rem 0;
+  font-size: clamp(0.8rem, 0.95vw, 0.9rem);
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.docs-content table th {
+  background: var(--surface-2);
+  color: var(--accent);
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  border-bottom: 2px solid var(--border-accent);
+}
+.docs-content table td {
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-2);
+}
+
+.docs-content code {
+  font-family: var(--mono);
+  background: var(--surface-2);
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+  color: var(--accent);
+}
+
+.docs-content .note {
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  padding: clamp(0.6rem, 1.5vw, 0.8rem) clamp(0.8rem, 2vw, 1.2rem);
+  margin: 0.8rem 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.docs-content .note strong { color: var(--accent); }
+
+.docs-content .important {
+  background: rgba(239, 68, 68, 0.08);
+  border-left: 3px solid var(--admin);
+  padding: clamp(0.6rem, 1.5vw, 0.8rem) clamp(0.8rem, 2vw, 1.2rem);
+  margin: 0.8rem 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.docs-content .important strong { color: var(--admin); }
+
+.docs-content .article { margin-top: 0.3rem; padding-top: 0.3rem; }
+.docs-content .article:first-of-type { margin-top: 0; }
+
+.back-link {
+  display: inline-block;
+  margin-top: 1.2rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+}
+.back-link:hover { text-decoration: underline; }
+
+.toc-block {
+  background: var(--surface-2);
+  padding: clamp(0.8rem, 2vw, 1.5rem);
+  border-radius: var(--radius);
+  margin: 1.2rem 0;
+}
+.toc-block ul {
+  columns: 2;
+  column-gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+.toc-block ul li {
+  padding: 0.1rem 0;
+  font-size: clamp(0.8rem, 0.95vw, 0.9rem);
+  break-inside: avoid;
+}
+.toc-block ul li a {
+  color: var(--text-2);
+  text-decoration: none;
+}
+.toc-block ul li a:hover { color: var(--accent); }
+.toc-block .toc-part {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.4rem;
+}
+
+/* Responsive para el índice */
+@media (max-width: 640px) {
+  .toc-block ul {
+    columns: 1;
+  }
+  .docs-content {
+    padding: 0.8rem;
+  }
+  .docs-content .doc-header .metadata {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .docs-content table {
+    font-size: 0.75rem;
+  }
+  .docs-content table th,
+  .docs-content table td {
+    padding: 0.2rem 0.3rem;
+  }
+}
