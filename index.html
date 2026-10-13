@@ -4,230 +4,117 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Manual de Staff · NIXXOSMP</title>
-<meta name="description" content="Manual interno de staff de NIXXOSMP: rangos, permisos, sanciones y políticas del servidor." />
-<link rel="icon" type="image/png" href="assets/images/nixxo.png" />
+<meta name="description" content="Manual interno de staff de NIXXOSMP: tabla de sanciones, jerarquía de roles, funciones por rango y políticas del servidor." />
+<meta name="theme-color" content="#0f0f0f" />
+<link rel="preload" as="image" href="assets/images/nixxo_banner.webp">
+<link rel="preload" as="image" href="assets/images/fondo2.webp">
+<link rel="preload" as="image" href="assets/images/nixxo_logo.webp">
+<link rel="preload" as="image" href="assets/images/nixxo_banner.webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
+<!-- Barra de progreso de lectura -->
+<div class="read-progress" aria-hidden="true"><span id="readBar"></span></div>
+
 <header id="siteHeader">
   <div class="crumb">
-    <div class="wrap"><a href="#top">NIXXOSMP</a> / <span>Staff</span> / <span>Manual</span></div>
+    <div class="wrap">
+      <a href="https://www.nixxosmp.lat" target="_blank" rel="noopener">nixxosmp.lat</a>
+      <span class="sep">/</span>
+      <span>Manual de Staff</span>
+    </div>
   </div>
   <div class="wrap navbar">
-    <a class="brand" href="#top">
-      <img src="assets/images/nixxo.png" alt="Logo NIXXOSMP" width="34" height="34" />
+    <a class="brand" href="#top" aria-label="Inicio del manual">
+      <img src="assets/images/nixxo_logo.webp" alt="" width="30" height="30" />
       <span class="txt">
         <b>NIXXOSMP</b>
         <span>Manual de Staff</span>
       </span>
     </a>
-    <button class="navtoggle" id="navToggle" aria-label="Abrir menú">≡</button>
-    <nav class="links" id="navLinks">
-      <a href="#principios">Principios</a>
-      <a href="#rangos">Rangos</a>
-      <a href="#sanciones">Sanciones</a>
-      <a href="#politicas">Políticas</a>
-      <a href="#transparencia">Transparencia</a>
+    <button class="navtoggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+      <span class="bars" aria-hidden="true"></span>
+    </button>
+    <nav class="links" id="navLinks" aria-label="Secciones del manual">
+      <a href="#sanciones">
+        <svg class="icon icon-sm" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 4h10M3 8h10M3 12h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Sanciones
+      </a>
+      <a href="#jerarquia">
+        <svg class="icon icon-sm" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4l2-4z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+        Jerarquía
+      </a>
+      <a href="#errores">
+        <svg class="icon icon-sm" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2l6 12H2L8 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M8 7v4M8 12.5v.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Errores
+      </a>
+      <a href="#roles">
+        <svg class="icon icon-sm" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="5" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Roles
+      </a>
+      <a href="#postulaciones">Postulaciones</a>
     </nav>
   </div>
 </header>
 
+<main>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
 <section class="hero" id="top">
-  <div class="wrap grid">
-    <div>
-      <span class="eyebrow">Documento interno · válido para todo el equipo</span>
-      <h1>Tener rango no es tener ventaja.</h1>
-      <p class="lead">Esta guía define qué puede hacer cada nivel del staff, qué le está prohibido y qué sanción corresponde a cada falta. El servidor se sostiene si el equipo actúa con criterio, pruebas y respeto.</p>
-      <div class="badgebar">
-        <span class="role-pill helper">Helper</span>
-        <span class="role-pill mod">Mod</span>
-        <span class="role-pill admin">Admin</span>
-      </div>
-    </div>
-    <div>
-      <img class="banner-img" src="assets/images/nixxobanner.png" alt="Banner NIXXOSMP" />
-    </div>
+  <div class="hero-bg" style="background-image:url('assets/images/fondo2.webp')" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="wrap hero-inner">
+    <figure class="hero-logo">
+      <img src="assets/images/nixxo_banner.webp" alt="NixxoSMP" width="560" height="560" fetchpriority="high" />
+    </figure>
+
+    <span class="eyebrow">
+      <svg class="icon icon-sm" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 12V4a1 1 0 011-1h10a1 1 0 011 1v8a1 1 0 01-1 1H3a1 1 0 01-1-1z" stroke="currentColor" stroke-width="1.4"/><path d="M5 7h6M5 9h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Documento interno · NixxoSMP
+    </span>
+
+    <h1>Manual de Staff</h1>
+
+    <p class="lead">Guía de referencia para el equipo de NixxoSMP: qué sanción corresponde a cada falta, qué puede hacer cada rango, qué le está prohibido y cómo se registran las decisiones. Aplica a todo el equipo, sin excepción.</p>
+
+    <ul class="chain" aria-label="Jerarquía del staff">
+      <li><span class="dot owner"></span>Dueño</li>
+      <li><span class="dot admin"></span>Admin</li>
+      <li><span class="dot mainstaff"></span>Main Staff</li>
+      <li><span class="dot mod"></span>Mod</li>
+      <li><span class="dot helper"></span>Helper</li>
+    </ul>
   </div>
 </section>
 
 <!-- ============================================================
-PRINCIPIOS
+     01 · TABLA DE SANCIONES
 ============================================================ -->
-<section id="principios">
+<section id="sanciones" class="reveal has-bg" data-bg="survival">
   <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">01 · Base</span>
-      <h2>Principios generales</h2>
-    </div>
-    <p class="section-sub">El staff existe para mantener el servidor justo, competitivo y estable. Esto aplica a los tres niveles por igual, sin excepción de rango.</p>
-
-    <div class="principle-grid">
-      <div class="principle"><span class="n">01</span><h4>Respeto</h4><p>Tratar a los jugadores con cortesía, incluso en situaciones tensas o conflictivas.</p></div>
-      <div class="principle"><span class="n">02</span><h4>Pruebas primero</h4><p>Nunca sancionar sin evidencia clara: capturas, vídeos o logs del servidor.</p></div>
-      <div class="principle"><span class="n">03</span><h4>Criterio, no enojo</h4><p>Las decisiones se basan en hechos, jamás en conflictos personales con el jugador.</p></div>
-      <div class="principle"><span class="n">04</span><h4>Sin ventaja propia</h4><p>Los comandos de staff son herramientas de moderación, nunca un atajo dentro del survival.</p></div>
-      <div class="principle"><span class="n">05</span><h4>Confidencialidad</h4><p>La información interna del staff no se filtra ni se discute en público.</p></div>
-      <div class="principle"><span class="n">06</span><h4>Derivar lo grave</h4><p>Ante dudas o casos complejos, se consulta a un rango superior antes de actuar.</p></div>
-    </div>
-
-    <div class="callout">
-      <span class="label">Nota</span>
-      <p>Si una situación no está contemplada en este manual pero afecta al servidor, el staff puede intervenir con criterio. Antes de aplicar una sanción no escrita, hay que consultar con un rango superior (Mod/Admin) y dejar constancia escrita de la decisión en el canal interno.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-RANGOS
-============================================================ -->
-<section id="rangos">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">02 · Jerarquía</span>
-      <h2>Rangos y permisos</h2>
-    </div>
-    <p class="section-sub">Cada nivel hereda las funciones del anterior y suma responsabilidad, no privilegios de juego.</p>
-
-    <!-- HELPER -->
-    <div class="rank" data-role="helper">
-      <div class="rank-head">
-        <span class="role-pill helper">Helper</span>
-      </div>
-      <p class="rank-tagline">Ayuda a jugadores y modera el chat.</p>
-
-      <div class="grant-grid">
-        <div class="grant yes">
-          <h5>Autorizado</h5>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Jugar survival con normalidad: PvP, alianzas, economía, eventos</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Responder dudas y orientar a jugadores nuevos</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Moderar el chat y mutear por spam o insultos</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Reportar casos graves a Mod/Admin</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Juntar pruebas de hacks, bugs o abuso</li>
-          </ul>
-        </div>
-        <div class="grant no">
-          <h5>Prohibido</h5>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Usar el rango para intimidar o amenazar con sanciones que no puede aplicar</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Pedir items, dinero o favores por ser staff</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Mutear por conflictos personales dentro del PvP</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Ocultar pruebas o defender amigos infractores</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Sancionar por venganza</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="chips">
-        <span class="chip">Advertencia verbal</span>
-        <span class="chip">Mute 10m – 6h</span>
-      </div>
-      <div class="mute-guide">
-        <div><span>Spam leve</span><span>10m</span></div>
-        <div><span>Flood repetido</span><span>15–30m</span></div>
-        <div><span>Insultos graves</span><span>30m–2h</span></div>
-        <div><span>Toxicidad excesiva</span><span>1h–6h</span></div>
-      </div>
-      <div class="rank-note">Si el Helper está involucrado en el conflicto, debe abstenerse y llamar a un Mod/Admin — <b>salvo</b> discriminación, doxxeo o amenazas reales, donde puede mutear de emergencia y avisar arriba de inmediato.</div>
-    </div>
-
-    <!-- MOD -->
-    <div class="rank" data-role="mod">
-      <div class="rank-head"><span class="role-pill mod">Mod</span></div>
-      <p class="rank-tagline">Investiga reportes y aplica sanciones temporales.</p>
-
-      <div class="grant-grid">
-        <div class="grant yes">
-          <h5>Autorizado</h5>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Todo lo que puede hacer Helper</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Revisar reportes e investigar jugadores sospechosos</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Usar <code>/tp</code> exclusivamente para revisar reportes</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Usar vanish o modo espectador solo para investigar</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Mutear, kickear, aplicar tempban y tempbanip</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Derivar casos graves a Admin</li>
-          </ul>
-        </div>
-        <div class="grant no">
-          <h5>Prohibido</h5>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Usar <code>/tp</code> para encontrar bases o loot</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Escanear enemigos con vanish o modo espectador</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Regalar información de bases o jugadores</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Borrar items, dinero o shards sin autorización</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Dar dinero, shards, rangos o llaves</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Aplicar ban permanente o ban-ip permanente</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Abusar de fly, heal, god o tp para ganar peleas</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="chips">
-        <span class="chip">Mute</span><span class="chip">Kick</span>
-        <span class="chip">Tempban</span><span class="chip">Tempbanip</span>
-      </div>
-      <div class="rank-note">Si el Mod está metido en una pelea, raid o bounty, debe abstenerse de sancionar a la otra parte salvo evidencia clarísima (hacks, insultos graves). En casos dudosos, llama a otro staff.</div>
-    </div>
-
-    <!-- ADMIN -->
-    <div class="rank" data-role="admin">
-      <div class="rank-head"><span class="role-pill admin">Admin</span></div>
-      <p class="rank-tagline">Control total, sanciones graves, bugs y economía.</p>
-
-      <div class="grant-grid">
-        <div class="grant yes">
-          <h5>Autorizado</h5>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Todo lo que puede hacer Mod</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Aplicar sanciones graves, incluido ban permanente</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Revisar hacks importantes, dupes, bugs y exploits</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Borrar items, dinero o shards obtenidos de forma ilegal</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Autorizar rollbacks</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Revisar el comportamiento del propio staff</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Intervenir en economía, crates, kits o tienda ante abuso</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 12L13 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Escalar problemas técnicos al Owner</li>
-          </ul>
-        </div>
-        <div class="grant no">
-          <h5>Prohibido</h5>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Abusar de permisos para jugar con ventaja</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Regalar items, dinero, shards, rangos o llaves sin autorización</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Cambiar reglas a su favor</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Proteger amigos o miembros de su grupo</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Ocultar bugs o dupes, o borrar pruebas</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Filtrar información interna del staff</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Tomar decisiones de tienda o pagos sin consultar al Owner</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="chips">
-        <span class="chip">Ban permanente</span>
-        <span class="chip">Tempban largo</span>
-        <span class="chip">Wipe de beneficios</span>
-        <span class="chip">Decisión final</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-SANCIONES
-============================================================ -->
-<section id="sanciones">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">03 · Referencia</span>
+    <header class="section-head">
+      <span class="kicker"><span class="num">01</span> Referencia rápida</span>
       <h2>Tabla de sanciones</h2>
-    </div>
-    <p class="section-sub">Varían según gravedad, reincidencia e intención.</p>
+    </header>
+    <p class="section-sub">Sanciones sugeridas según gravedad, reincidencia e intención. La aplicación final depende del criterio del rango que actúa, siempre con pruebas y registro en el canal interno.</p>
 
     <div class="table-wrap">
       <table class="sanciones">
         <thead>
-          <tr><th>Categoría</th><th>Falta</th><th>Sanción</th></tr>
+          <tr>
+            <th scope="col">Categoría</th>
+            <th scope="col">Falta</th>
+            <th scope="col">Sanción</th>
+          </tr>
         </thead>
         <tbody>
           <tr><td class="cat" rowspan="7">Chat / Discord</td><td>Spam leve</td><td class="sancion">Advertencia → mute 10m</td></tr>
@@ -251,9 +138,9 @@ SANCIONES
           <tr><td>Exploits contra la economía</td><td class="sancion">Tempban 14–30d + wipe → ban permanente</td></tr>
 
           <tr><td class="cat" rowspan="4">Economía / Multicuentas</td><td>Farmear kills con amigos</td><td class="sancion">Borrado + tempban 1–7d → 14–30d</td></tr>
-          <tr><td>Multicuenta para AFK/recompensas</td><td class="sancion">Tempbanip 7–30d + borrado</td></tr>
+          <tr><td>Multicuenta para AFK / recompensas</td><td class="sancion">Tempbanip 7–30d + borrado</td></tr>
           <tr><td>Multicuenta para evadir sanción</td><td class="sancion">Tempbanip o ban permanente</td></tr>
-          <tr><td>Comprar/vender fuera de tienda</td><td class="sancion">Tempban 30d o ban permanente</td></tr>
+          <tr><td>Comprar / vender fuera de tienda</td><td class="sancion">Tempban 30d o ban permanente</td></tr>
 
           <tr><td class="cat" rowspan="2">Conducta</td><td>Molestar excesivamente a nuevos</td><td class="sancion">Advertencia → tempban 1–7d</td></tr>
           <tr><td>Falsos reportes de mala fe</td><td class="sancion">Advertencia → tempban 1–3d</td></tr>
@@ -265,65 +152,543 @@ SANCIONES
         </tbody>
       </table>
     </div>
+
+    <aside class="callout">
+      <span class="label">
+        <svg class="icon icon-sm" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M8 7v4M8 5.2v.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Nota
+      </span>
+      <p>Las sanciones se aplican siempre con pruebas (capturas, vídeos o logs del servidor) y se registran en el canal de auditoría con nick del staff, usuario sancionado, tipo de sanción, motivo y duración. Si un caso no está contemplado en esta tabla, se consulta con un rango superior antes de actuar.</p>
+    </aside>
   </div>
 </section>
 
 <!-- ============================================================
-POLÍTICAS
+     02 · JERARQUÍA
 ============================================================ -->
-<section id="politicas">
+<section id="jerarquia" class="reveal has-bg" data-bg="practice">
   <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">04 · Reglas adicionales</span>
-      <h2>Políticas del servidor</h2>
-    </div>
-    <p class="section-sub">Reglas que no encajan en una tabla, pero rigen igual para todo el equipo.</p>
+    <header class="section-head">
+      <span class="kicker"><span class="num">02</span> Jerarquía</span>
+      <h2>Quién puede sancionar</h2>
+    </header>
+    <p class="section-sub">Cada rango hereda las funciones del anterior y suma responsabilidad, nunca privilegios de juego. Los colores corresponden a los roles reales del Discord.</p>
 
-    <div class="policy-grid">
-      <div class="policy"><span class="tag">Multicuentas</span><h5>Una alterna, sin abuso</h5><p>Permitida para construir o comerciar. No para AFK, loot, shards o evadir muertes y sanciones.</p></div>
-      <div class="policy"><span class="tag">Publicidad</span><h5>Enlaces con criterio</h5><p>Promocionar otros servidores se sanciona con mute y tempban. YouTube o Twitch están permitidos si no es spam.</p></div>
-      <div class="policy"><span class="tag">Apelaciones</span><h5>Todo se puede apelar</h5><p>Cualquier sancionado puede abrir un ticket en Discord. Mentir en la apelación agrava la sanción original.</p></div>
-      <div class="policy"><span class="tag">Abuso de staff</span><h5>La confianza no es gratis</h5><p>Usar el rango para tp a bases, espiar con vanish o regalar recursos conlleva advertencia, suspensión o expulsión.</p></div>
-      <div class="policy"><span class="tag">Pruebas y logs</span><h5>Nada sin respaldo</h5><p>Toda sanción grave se registra en el canal privado del staff con nombre, sanción y evidencia adjunta.</p></div>
-      <div class="policy"><span class="tag">Reportar bugs</span><h5>Avisar suma, abusar cuesta</h5><p>Reportar un bug sin explotarlo no tiene sanción y puede premiarse. Abusarlo conlleva tempban.</p></div>
-      <div class="policy"><span class="tag">PvP competitivo</span><h5>Jugar fuerte está bien</h5><p>Pelear, perseguir, aliarse o traicionar es parte del juego. No se sanciona por matar o raidear dentro de las reglas.</p></div>
-      <div class="policy"><span class="tag">Antes de sancionar</span><h5>El orden importa</h5><p>Revisar contexto, juntar pruebas, verificar reincidencia, aplicar sanción proporcional y avisar en el canal interno.</p></div>
-      <div class="policy"><span class="tag">Regla final</span><h5>Cuidar antes que castigar</h5><p>Podés jugar y competir, pero nunca usar tu rango para sacar ventaja. Ante la duda, consultá antes de actuar.</p></div>
-    </div>
-  </div>
-</section>
+    <ol class="hierarchy">
+      <li class="h-item" data-role="owner">
+        <div class="h-marker"><span class="dot owner"></span><span class="h-line"></span></div>
+        <div class="h-body">
+          <div class="h-head">
+            <span class="role-pill owner">Dueño</span>
+            <span class="h-code">#ff0000</span>
+          </div>
+          <p class="h-desc">Máxima autoridad del servidor. Cierra las decisiones del equipo, autoriza bans permanentes del staff y define políticas.</p>
+        </div>
+      </li>
+      <li class="h-item" data-role="admin">
+        <div class="h-marker"><span class="dot admin"></span><span class="h-line"></span></div>
+        <div class="h-body">
+          <div class="h-head">
+            <span class="role-pill admin">Admin</span>
+            <span class="h-code">#16ff00</span>
+          </div>
+          <p class="h-desc">Sanciones graves, incluido ban permanente. Investiga hacks, dupes y exploits. Puede intervenir la economía y revisar al propio staff.</p>
+        </div>
+      </li>
+      <li class="h-item" data-role="mainstaff">
+        <div class="h-marker"><span class="dot mainstaff"></span><span class="h-line"></span></div>
+        <div class="h-body">
+          <div class="h-head">
+            <span class="role-pill mainstaff">Main Staff</span>
+            <span class="h-code">#1e7fe9</span>
+          </div>
+          <p class="h-desc">Coordina al equipo de moderación. Supervisa cómo Mods y Helpers aplican sanciones y puede intervenir en cualquier caso abierto.</p>
+        </div>
+      </li>
+      <li class="h-item" data-role="mod">
+        <div class="h-marker"><span class="dot mod"></span><span class="h-line"></span></div>
+        <div class="h-body">
+          <div class="h-head">
+            <span class="role-pill mod">Mod</span>
+            <span class="h-code">#ffa100</span>
+          </div>
+          <p class="h-desc">Investiga reportes y aplica sanciones temporales: mute, kick, tempban y tempbanip. Los casos graves se derivan a Admin.</p>
+        </div>
+      </li>
+      <li class="h-item" data-role="helper">
+        <div class="h-marker"><span class="dot helper"></span></div>
+        <div class="h-body">
+          <div class="h-head">
+            <span class="role-pill helper">Helper</span>
+            <span class="h-code">#5abdff</span>
+          </div>
+          <p class="h-desc">Atiende a los jugadores y modera el chat. Puede mutear por spam o insultos, y reporta los casos graves al rango siguiente.</p>
+        </div>
+      </li>
+    </ol>
 
-<!-- ============================================================
-TRANSPARENCIA
-============================================================ -->
-<section id="transparencia">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">05 · Confianza</span>
-      <h2>Transparencia y registro</h2>
-    </div>
-    <div class="transparencia-panel">
-      <img src="assets/images/nixxo.png" alt="Logo NIXXOSMP" width="56" height="56" />
-      <div class="copy">
-        <h3>Ninguna sanción es "porque sí"</h3>
-        <p>Toda conducta queda registrada mediante bots, logs del servidor e interacciones. Cada decisión del staff está respaldada por pruebas. Si creés que una norma fue incumplida o que un miembro del equipo abusó de su poder, hay un solo canal para reportarlo.</p>
-        <a class="btn" href="https://discord.gg/StcsUrSEfm" target="_blank" rel="noopener">Abrir ticket en Discord →</a>
+    <div class="adjacent">
+      <div>
+        <span class="role-pill maindev">Main Developer</span>
+        <span class="role-pill dev">Developer</span>
+        <p>El equipo técnico <b>no aplica sanciones</b>. En el trato con jugadores se comporta como Helper: responde dudas, canaliza reportes y mantiene el mismo código de conducta. Cualquier conflicto lo escala a un Mod o Admin.</p>
+      </div>
+      <div>
+        <span class="role-pill tester">Tester</span>
+        <p>Rol fuera del equipo de staff. Colabora probando versiones o mecánicas, pero sus permisos y obligaciones son las de un usuario común.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============================================================
+     03 · ERRORES FRECUENTES
+============================================================ -->
+<section id="errores" class="reveal">
+  <div class="wrap">
+    <header class="section-head">
+      <span class="kicker"><span class="num">03</span> Puntos críticos</span>
+      <h2>Errores frecuentes del staff</h2>
+    </header>
+    <p class="section-sub">Los cuatro casos que más se repiten y que derivan en advertencias, suspensión o remoción del cargo. Ninguno se pasa por alto.</p>
+
+    <ol class="mistakes">
+      <li>
+        <span class="m-num">01</span>
+        <span class="m-icon" aria-hidden="true">
+          <svg class="icon icon-lg" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M6 10h8M10 6v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </span>
+        <div>
+          <h4>Jugar en la cuenta de staff</h4>
+          <p>Mod, Admin y Main Staff <b>no pueden jugar el survival con su cuenta de staff</b>. Deben usar una cuenta alternativa sin permisos. Entrar al PvP, raidear o farmear con permisos activos es abuso de rango, incluso sin usar comandos.</p>
+        </div>
+      </li>
+      <li>
+        <span class="m-num">02</span>
+        <span class="m-icon" aria-hidden="true">
+          <svg class="icon icon-lg" viewBox="0 0 20 20" fill="none"><path d="M10 2l8 14H2L10 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 8v4M10 14.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </span>
+        <div>
+          <h4>Helper con tono que no corresponde</h4>
+          <p>El Helper es la cara más visible del equipo. Su forma de hablar debe ser la misma que la de un Mod o Admin: neutra, clara y sin cruzar insultos ni ironías. Faltas de respeto desde el rango Helper derivan directamente en revisión del cargo.</p>
+        </div>
+      </li>
+      <li>
+        <span class="m-num">03</span>
+        <span class="m-icon" aria-hidden="true">
+          <svg class="icon icon-lg" viewBox="0 0 20 20" fill="none"><path d="M4 3h9l4 4v10a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5"/><path d="M13 3v4h4" stroke="currentColor" stroke-width="1.5"/><path d="M7 11h6M7 14h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </span>
+        <div>
+          <h4>Motivos de sanción sin contexto</h4>
+          <p>El motivo en el log debe explicar <b>qué regla se rompió</b>. Frases vagas, chistes internos o referencias que solo entiende el staff no sirven como registro. Si un admin revisa el log, tiene que poder entender el caso sin preguntar.</p>
+        </div>
+      </li>
+      <li>
+        <span class="m-num">04</span>
+        <span class="m-icon" aria-hidden="true">
+          <svg class="icon icon-lg" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M3 8h14M8 8v9" stroke="currentColor" stroke-width="1.5"/></svg>
+        </span>
+        <div>
+          <h4>Aplicar sanción sin pruebas o sin registrar</h4>
+          <p>Toda sanción grave se registra en el canal de auditoría con nick del staff, usuario sancionado, tipo de sanción, motivo y duración. Si no hay pruebas adjuntas, la sanción puede ser revertida y el staff revisado.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================
+     04 · ROLES
+============================================================ -->
+<section id="roles" class="reveal">
+  <div class="wrap">
+    <header class="section-head">
+      <span class="kicker"><span class="num">04</span> Detalle</span>
+      <h2>Funciones por rango</h2>
+    </header>
+    <p class="section-sub">Qué puede hacer cada rango, qué le está prohibido y qué sanciones puede aplicar.</p>
+
+    <article class="rank" data-role="helper">
+      <header class="rank-head">
+        <div class="rank-label">
+          <span class="role-pill helper">Helper</span>
+          <span class="rank-order">Nivel 01</span>
+        </div>
+        <p class="rank-tagline">Atiende a los jugadores y modera el chat.</p>
+      </header>
+
+      <div class="grant-grid">
+        <div class="grant yes">
+          <h5>Autorizado</h5>
+          <ul>
+            <li>Jugar survival con normalidad desde su cuenta personal: PvP, alianzas, economía, eventos</li>
+            <li>Responder dudas y orientar a jugadores nuevos</li>
+            <li>Moderar el chat y mutear por spam o insultos</li>
+            <li>Reportar casos graves a Mod / Admin</li>
+            <li>Juntar pruebas de hacks, bugs o abuso</li>
+          </ul>
+        </div>
+        <div class="grant no">
+          <h5>Prohibido</h5>
+          <ul>
+            <li>Usar el rango para intimidar o amenazar con sanciones que no puede aplicar</li>
+            <li>Pedir items, dinero o favores por ser staff</li>
+            <li>Mutear por conflictos personales dentro del PvP</li>
+            <li>Ocultar pruebas o defender a amigos infractores</li>
+            <li>Sancionar por venganza</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="chips">
+        <span class="chip">Advertencia verbal</span>
+        <span class="chip">Mute 10m – 6h</span>
+      </div>
+
+      <div class="mute-guide">
+        <div><span>Spam leve</span><span>10m</span></div>
+        <div><span>Flood repetido</span><span>15–30m</span></div>
+        <div><span>Insultos graves</span><span>30m–2h</span></div>
+        <div><span>Toxicidad excesiva</span><span>1h–6h</span></div>
+      </div>
+
+      <p class="rank-note">Si el Helper está involucrado en el conflicto, debe abstenerse y llamar a un Mod o Admin — <b>salvo</b> discriminación, doxxeo o amenazas reales, donde puede mutear de emergencia y avisar arriba de inmediato.</p>
+    </article>
+
+    <article class="rank" data-role="mod">
+      <header class="rank-head">
+        <div class="rank-label">
+          <span class="role-pill mod">Mod</span>
+          <span class="rank-order">Nivel 02</span>
+        </div>
+        <p class="rank-tagline">Investiga reportes y aplica sanciones temporales.</p>
+      </header>
+
+      <div class="grant-grid">
+        <div class="grant yes">
+          <h5>Autorizado</h5>
+          <ul>
+            <li>Todo lo que puede hacer Helper</li>
+            <li>Revisar reportes e investigar jugadores sospechosos</li>
+            <li>Usar <code>/tp</code> exclusivamente para revisar reportes</li>
+            <li>Usar vanish o modo espectador solo para investigar</li>
+            <li>Mutear, kickear, aplicar tempban y tempbanip</li>
+            <li>Derivar casos graves a Admin</li>
+          </ul>
+        </div>
+        <div class="grant no">
+          <h5>Prohibido</h5>
+          <ul>
+            <li>Jugar survival con la cuenta de staff — debe usar una alterna sin permisos</li>
+            <li>Usar <code>/tp</code> para encontrar bases o loot</li>
+            <li>Escanear enemigos con vanish o modo espectador</li>
+            <li>Regalar información de bases o jugadores</li>
+            <li>Borrar items, dinero o shards sin autorización</li>
+            <li>Dar dinero, shards, rangos o llaves</li>
+            <li>Aplicar ban permanente o ban-ip permanente</li>
+            <li>Abusar de fly, heal, god o tp para ganar peleas</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="chips">
+        <span class="chip">Mute</span>
+        <span class="chip">Kick</span>
+        <span class="chip">Tempban</span>
+        <span class="chip">Tempbanip</span>
+      </div>
+
+      <p class="rank-note">Si el Mod está metido en una pelea, raid o bounty, debe abstenerse de sancionar a la otra parte salvo evidencia clarísima (hacks, insultos graves). En casos dudosos, llama a otro staff.</p>
+    </article>
+
+    <article class="rank" data-role="admin">
+      <header class="rank-head">
+        <div class="rank-label">
+          <span class="role-pill admin">Admin</span>
+          <span class="rank-order">Nivel 03</span>
+        </div>
+        <p class="rank-tagline">Sanciones graves, bugs, economía y revisión del staff.</p>
+      </header>
+
+      <div class="grant-grid">
+        <div class="grant yes">
+          <h5>Autorizado</h5>
+          <ul>
+            <li>Todo lo que puede hacer Mod</li>
+            <li>Aplicar sanciones graves, incluido ban permanente</li>
+            <li>Revisar hacks importantes, dupes, bugs y exploits</li>
+            <li>Borrar items, dinero o shards obtenidos de forma ilegal</li>
+            <li>Autorizar rollbacks</li>
+            <li>Revisar el comportamiento del propio staff</li>
+            <li>Intervenir en economía, crates, kits o tienda ante abuso</li>
+            <li>Escalar problemas técnicos al Owner</li>
+          </ul>
+        </div>
+        <div class="grant no">
+          <h5>Prohibido</h5>
+          <ul>
+            <li>Jugar survival con la cuenta de staff — debe usar una alterna sin permisos</li>
+            <li>Abusar de permisos para jugar con ventaja</li>
+            <li>Regalar items, dinero, shards, rangos o llaves sin autorización</li>
+            <li>Cambiar reglas a su favor</li>
+            <li>Proteger a amigos o miembros de su grupo</li>
+            <li>Ocultar bugs o dupes, o borrar pruebas</li>
+            <li>Filtrar información interna del staff</li>
+            <li>Tomar decisiones de tienda o pagos sin consultar al Owner</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="chips">
+        <span class="chip">Ban permanente</span>
+        <span class="chip">Tempban largo</span>
+        <span class="chip">Wipe de beneficios</span>
+      </div>
+    </article>
+
+    <article class="rank" data-role="mainstaff">
+      <header class="rank-head">
+        <div class="rank-label">
+          <span class="role-pill mainstaff">Main Staff</span>
+          <span class="rank-order">Nivel 04</span>
+        </div>
+        <p class="rank-tagline">Coordina al equipo de moderación.</p>
+      </header>
+
+      <div class="grant-grid">
+        <div class="grant yes">
+          <h5>Autorizado</h5>
+          <ul>
+            <li>Todo lo que puede hacer Admin</li>
+            <li>Coordinar y supervisar al equipo de Mods y Helpers</li>
+            <li>Revisar cómo cada rango aplica sanciones</li>
+            <li>Intervenir en cualquier caso abierto si detecta errores</li>
+            <li>Proponer cambios al manual o a las políticas</li>
+            <li>Reportar directamente al Dueño</li>
+          </ul>
+        </div>
+        <div class="grant no">
+          <h5>Prohibido</h5>
+          <ul>
+            <li>Jugar survival con la cuenta de staff — debe usar una alterna sin permisos</li>
+            <li>Tomar decisiones que correspondan al Dueño</li>
+            <li>Modificar el manual sin avisar al resto del equipo</li>
+            <li>Ocultar errores de otros miembros del staff</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="chips">
+        <span class="chip">Sanciones graves</span>
+        <span class="chip">Revisión de staff</span>
+        <span class="chip">Coordinación</span>
+      </div>
+    </article>
+
+    <article class="rank" data-role="owner">
+      <header class="rank-head">
+        <div class="rank-label">
+          <span class="role-pill owner">Dueño</span>
+          <span class="rank-order">Nivel 05</span>
+        </div>
+        <p class="rank-tagline">Máxima autoridad del servidor.</p>
+      </header>
+
+      <div class="grant-grid">
+        <div class="grant yes">
+          <h5>Autorizado</h5>
+          <ul>
+            <li>Todo lo que puede hacer cualquier rango</li>
+            <li>Aprobar bans permanentes del staff y expulsiones del equipo</li>
+            <li>Definir políticas, reglas y cambios al manual</li>
+            <li>Tomar decisiones de tienda, pagos y alianzas</li>
+            <li>Escalar problemas técnicos al equipo de desarrollo</li>
+          </ul>
+        </div>
+        <div class="grant no">
+          <h5>Prohibido</h5>
+          <ul>
+            <li>Jugar survival con la cuenta de dueño — debe usar una alterna sin permisos</li>
+            <li>Abusar del rango para beneficio propio dentro del juego</li>
+            <li>Tomar decisiones unilaterales que afecten al equipo sin comunicarlas</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="chips">
+        <span class="chip">Decisión final</span>
+        <span class="chip">Políticas y reglas</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================================
+     05 · POLÍTICAS
+============================================================ -->
+<section id="politicas" class="reveal">
+  <div class="wrap">
+    <header class="section-head">
+      <span class="kicker"><span class="num">05</span> Reglas adicionales</span>
+      <h2>Políticas del servidor</h2>
+    </header>
+    <p class="section-sub">Reglas que no encajan en una tabla, pero rigen igual para todo el equipo y para los jugadores.</p>
+
+    <dl class="policies">
+      <div>
+        <dt><span class="tag">Multicuentas</span><h5>Una alterna, sin abuso</h5></dt>
+        <dd>Permitida para construir o comerciar. No para AFK, loot, shards o evadir muertes y sanciones.</dd>
+      </div>
+      <div>
+        <dt><span class="tag">Publicidad</span><h5>Enlaces con criterio</h5></dt>
+        <dd>Promocionar otros servidores se sanciona con mute y tempban. YouTube o Twitch están permitidos si no es spam.</dd>
+      </div>
+      <div>
+        <dt><span class="tag">Apelaciones</span><h5>Todo se puede apelar</h5></dt>
+        <dd>Cualquier sancionado puede abrir un ticket en Discord. Mentir en la apelación agrava la sanción original.</dd>
+      </div>
+      <div>
+        <dt><span class="tag">Abuso de staff</span><h5>La confianza no es gratis</h5></dt>
+        <dd>Usar el rango para tp a bases, espiar con vanish o regalar recursos conlleva advertencia, suspensión o expulsión.</dd>
+      </div>
+      <div>
+        <dt><span class="tag">Pruebas y logs</span><h5>Nada sin respaldo</h5></dt>
+        <dd>Toda sanción grave se registra en el canal privado del staff con nombre, sanción y evidencia adjunta.</dd>
+      </div>
+      <div>
+        <dt><span class="tag">Reportar bugs</span><h5>Avisar suma, abusar cuesta</h5></dt>
+        <dd>Reportar un bug sin explotarlo no tiene sanción y puede premiarse. Abusarlo conlleva tempban.</dd>
+      </div>
+      <div>
+        <dt><span class="tag">PvP competitivo</span><h5>Jugar fuerte está bien</h5></dt>
+        <dd>Pelear, perseguir, aliarse o traicionar es parte del juego. No se sanciona por matar o raidear dentro de las reglas.</dd>
+      </div>
+      <div>
+        <dt><span class="tag">Antes de sancionar</span><h5>El orden importa</h5></dt>
+        <dd>Revisar contexto, juntar pruebas, verificar reincidencia, aplicar sanción proporcional y avisar en el canal interno.</dd>
+      </div>
+      <div>
+        <dt><span class="tag">Regla final</span><h5>Cuidar antes que castigar</h5></dt>
+        <dd>Se puede jugar y competir, pero nunca usar el rango para sacar ventaja. Ante la duda, consultar antes de actuar.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============================================================
+     06 · POSTULACIONES
+============================================================ -->
+<section id="postulaciones" class="reveal">
+  <div class="wrap">
+    <header class="section-head">
+      <span class="kicker"><span class="num">06</span> Ingreso al equipo</span>
+      <h2>Postulaciones de staff</h2>
+    </header>
+    <p class="section-sub">El equipo se renueva cada cierto tiempo. Cuando hay vacantes, se abren postulaciones públicas y se cierran al completar los cupos.</p>
+
+    <div class="postulaciones">
+      <div>
+        <h5>Dónde se publican</h5>
+        <p>Las convocatorias se anuncian en el Discord oficial. El formulario, los requisitos y la fecha de cierre se publican en el mismo anuncio.</p>
+      </div>
+      <div>
+        <h5>Cómo se evalúan</h5>
+        <p>Se revisa comportamiento previo en el servidor, actividad, trato con otros jugadores y disponibilidad. No alcanza con postularse: se evalúa el historial.</p>
+      </div>
+      <div>
+        <h5>Qué esperar</h5>
+        <p>El equipo nuevo entra con un período de prueba como Helper. La confirmación del rango depende del desempeño durante ese período.</p>
+      </div>
+      <div>
+        <h5>Qué no sirve</h5>
+        <p>Postulaciones por MD, por amigos dentro del staff o fuera del formulario oficial no se toman en cuenta. Tampoco se acelera un rango por insistencia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     07 · TRANSPARENCIA
+============================================================ -->
+<section id="transparencia" class="reveal">
+  <div class="wrap">
+    <header class="section-head">
+      <span class="kicker"><span class="num">07</span> Confianza</span>
+      <h2>Transparencia y registro</h2>
+    </header>
+
+    <div class="transparencia-panel">
+      <figure class="t-logo">
+        <img src="assets/images/nixxo_logo.webp" alt="NixxoSMP" width="160" height="160" loading="lazy" />
+      </figure>
+      <div class="copy">
+        <h3>Ninguna sanción es "porque sí"</h3>
+        <p>Toda conducta queda registrada mediante bots, logs del servidor e interacciones. Cada decisión del staff está respaldada por pruebas. Si creés que una norma fue incumplida o que un miembro del equipo abusó de su poder, hay un solo canal para reportarlo.</p>
+        <a class="btn" href="https://discord.gg/StcsUrSEfm" target="_blank" rel="noopener">Abrir ticket en Discord <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER — 3 filas organizadas
+============================================================ -->
 <footer>
   <div class="wrap">
-    <div class="foot-top">
-      <img src="assets/images/nixxo.png" alt="Logo NIXXOSMP" width="32" height="32" />
-      <b>NIXXOSMP</b>
+
+    <!-- Fila 1: marca + tagline -->
+    <div class="foot-brand">
+      <div class="foot-brand-top">
+        <img src="assets/images/nixxo_logo.webp" alt="" width="36" height="36" loading="lazy" />
+        <div class="foot-brand-txt">
+          <b>NIXXOSMP</b>
+          <span>Manual de Staff</span>
+        </div>
+      </div>
+      <p class="quote">"NixxoSMP busca ser competitivo, intenso y justo. El staff existe para que eso se mantenga."</p>
     </div>
-    <p class="quote">"NixxoSMP busca ser competitivo, intenso y justo. El staff existe para que eso se mantenga."</p>
-    <div class="foot-row">
-      <span>© 2026 NIXXOSMP · Manual de staff v1.0</span>
-      <span><a href="https://discord.gg/StcsUrSEfm" target="_blank" rel="noopener">Discord</a> · <a href="https://www.tiktok.com/@nixxooficial" target="_blank" rel="noopener">TikTok</a></span>
+
+    <!-- Fila 2: navegación en 3 columnas -->
+    <nav class="foot-nav" aria-label="Navegación del pie">
+      <div class="foot-col">
+        <h6>Manual</h6>
+        <ul>
+          <li><a href="#sanciones">Sanciones</a></li>
+          <li><a href="#jerarquia">Jerarquía</a></li>
+          <li><a href="#errores">Errores frecuentes</a></li>
+          <li><a href="#roles">Roles y funciones</a></li>
+          <li><a href="#politicas">Políticas</a></li>
+          <li><a href="#postulaciones">Postulaciones</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h6>Servidor</h6>
+        <ul>
+          <li><a href="https://www.nixxosmp.lat" target="_blank" rel="noopener">nixxosmp.lat</a></li>
+          <li><a href="https://tienda.nixxosmp.lat" target="_blank" rel="noopener">tienda.nixxosmp.lat</a></li>
+          <li><a href="https://discord.gg/StcsUrSEfm" target="_blank" rel="noopener">Discord</a></li>
+          <li><a href="https://www.tiktok.com/@nixxooficial" target="_blank" rel="noopener">TikTok</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h6>Legal</h6>
+        <ul>
+          <li><a href="politica.html">Política de Privacidad</a></li>
+          <li><a href="terminos.html">Términos de Uso</a></li>
+          <li><a href="politica.html#articulo-13">Derechos ARCO</a></li>
+          <li><a href="politica.html#articulo-14">Logs de Moderación</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Fila 3: bottom -->
+    <div class="foot-bottom">
+      <span>© 2026 NIXXOSMP · Manual de Staff</span>
+      <span class="foot-meta">Documento interno · Aplica a todo el equipo</span>
     </div>
+
   </div>
 </footer>
 
